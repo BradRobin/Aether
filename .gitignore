@@ -1,0 +1,89 @@
+# Tauri / Rust
+target/
+src-tauri/target
+src-tauri/gen
+**/gen/
+
+# Node.js / React / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store
+.vite/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.spec
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+
+# Aether Specific - High Priority
+# Large drone / geospatial files
+*.las
+*.laz
+*.tif
+*.tiff
+*.geojson
+*.shp
+*.prj
+*.dxf
+*.ortho
+*.pointcloud
+*.raw
+
+# Local data and test files
+/data/
+**/test_data/
+**/sample_data/
+**/exports/
+
+# Local models and heavy AI assets
+models/
+ollama/
+.cache/
+**/.ollama
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Logs and temp
+*.log
+logs/
+temp/
+tmp/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# Build outputs
+release/

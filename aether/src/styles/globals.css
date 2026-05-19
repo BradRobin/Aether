@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* Sovereign Authority — tokens from design/stitch-export/DESIGN.md */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: #0b1326;
+  --color-foreground: #dae2fd;
+
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-surface-variant: #2d3449;
+
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #bbcac6;
+  --color-on-background: #dae2fd;
+
+  --color-primary: #4fdbc8;
+  --color-primary-foreground: #003731;
+  --color-primary-container: #14b8a6;
+  --color-on-primary-container: #00423b;
+
+  --color-secondary: #ffb95f;
+  --color-secondary-foreground: #472a00;
+  --color-secondary-container: #ee9800;
+  --color-on-secondary-container: #5b3800;
+
+  --color-tertiary: #ffb59e;
+  --color-tertiary-container: #f38764;
+
+  --color-outline: #859490;
+  --color-outline-variant: #3c4947;
+
+  --color-destructive: #ffb4ab;
+  --color-destructive-foreground: #690005;
+
+  --color-muted: #171f33;
+  --color-muted-foreground: #bbcac6;
+
+  --color-accent: #222a3d;
+  --color-accent-foreground: #dae2fd;
+
+  --color-card: #131b2e;
+  --color-card-foreground: #dae2fd;
+
+  --color-popover: #171f33;
+  --color-popover-foreground: #dae2fd;
+
+  --color-border: #3c4947;
+  --color-input: #3c4947;
+  --color-ring: #4fdbc8;
+
+  --spacing-container-margin: 24px;
+  --spacing-gutter: 16px;
+  --spacing-density-compact: 8px;
+  --spacing-density-comfortable: 16px;
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --text-display-lg: 3rem;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.04em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 2rem;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-mobile: 1.5rem;
+  --text-headline-mobile--line-height: 1.2;
+  --text-headline-mobile--letter-spacing: -0.01em;
+  --text-headline-mobile--font-weight: 600;
+
+  --text-body-md: 0.875rem;
+  --text-body-md--line-height: 1.5;
+  --text-body-md--letter-spacing: -0.01em;
+
+  --text-data-mono: 0.8125rem;
+  --text-data-mono--line-height: 1.6;
+
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--line-height: 1;
+  --text-label-sm--letter-spacing: 0.05em;
+  --text-label-sm--font-weight: 600;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    --background: #0b1326;
+    --foreground: #dae2fd;
+    --card: #131b2e;
+    --card-foreground: #dae2fd;
+    --popover: #171f33;
+    --popover-foreground: #dae2fd;
+    --primary: #4fdbc8;
+    --primary-foreground: #003731;
+    --secondary: #ffb95f;
+    --secondary-foreground: #472a00;
+    --muted: #171f33;
+    --muted-foreground: #bbcac6;
+    --accent: #222a3d;
+    --accent-foreground: #dae2fd;
+    --destructive: #ffb4ab;
+    --destructive-foreground: #690005;
+    --border: #3c4947;
+    --input: #3c4947;
+    --ring: #4fdbc8;
+    --radius: 0.25rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-body-md overflow-hidden;
+  }
+}
+
+/* Thin scrollbars — matches Stitch export */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060e20;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c4947;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4fdbc8;
+}

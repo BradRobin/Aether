@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#0b1326",
+                        "inverse-primary": "#006b5f",
+                        "surface-dim": "#0b1326",
+                        "on-error": "#690005",
+                        "secondary-container": "#ee9800",
+                        "on-background": "#dae2fd",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "on-primary-container": "#00423b",
+                        "inverse-on-surface": "#283044",
+                        "on-tertiary-fixed-variant": "#7c2d11",
+                        "surface-container-high": "#222a3d",
+                        "on-tertiary": "#5e1800",
+                        "error-container": "#93000a",
+                        "surface-tint": "#4fdbc8",
+                        "outline-variant": "#3c4947",
+                        "on-primary-fixed-variant": "#005048",
+                        "on-surface-variant": "#bbcac6",
+                        "on-secondary-container": "#5b3800",
+                        "on-primary-fixed": "#00201c",
+                        "on-secondary": "#472a00",
+                        "surface-variant": "#2d3449",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-container": "#f38764",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#171f33",
+                        "tertiary": "#ffb59e",
+                        "primary-fixed": "#71f8e4",
+                        "on-tertiary-container": "#6c2106",
+                        "primary": "#4fdbc8",
+                        "surface-container-highest": "#2d3449",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-fixed": "#ffddb8",
+                        "outline": "#859490",
+                        "surface-container-low": "#131b2e",
+                        "inverse-surface": "#dae2fd",
+                        "primary-fixed-dim": "#4fdbc8",
+                        "secondary": "#ffb95f",
+                        "primary-container": "#14b8a6",
+                        "on-secondary-fixed": "#2a1700",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-surface": "#dae2fd",
+                        "on-primary": "#003731",
+                        "surface-bright": "#31394d",
+                        "surface": "#0b1326",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "density-comfortable": "16px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "density-compact": "8px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["13px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #060e20; }
+        ::-webkit-scrollbar-thumb { background: #3c4947; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4fdbc8; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-container-margin h-16 z-50 fixed top-0 bg-surface border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary font-bold uppercase tracking-tighter">Aether Platform</span>
+<div class="hidden md:flex gap-6 ml-8">
+<a class="font-medium text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 px-3 py-1" href="#">Mission Control</a>
+<a class="font-bold text-primary border-b-2 border-primary transition-colors duration-200 px-3 py-1" href="#">Analysis</a>
+<a class="font-medium text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 px-3 py-1" href="#">Fleet</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded px-9 py-1.5 text-sm focus:outline-none focus:border-primary w-64" placeholder="Search parameters..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="wifi_off">wifi_off</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="flex flex-col h-full fixed left-0 top-0 z-40 bg-surface-container-lowest border-r border-surface-variant w-64 pt-20">
+<div class="px-6 mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-black uppercase">Aether OS</h1>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-1">High Integrity Platform</p>
+</div>
+<div class="flex-grow flex flex-col gap-1 px-2">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Geospatial</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-primary-container text-on-primary-container border-r-4 border-primary transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Analysis</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Operations</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Archive</span>
+</a>
+</div>
+<div class="p-4 mt-auto flex flex-col gap-1 border-t border-surface-variant">
+<a class="flex items-center gap-4 px-4 py-2 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Settings</span>
+</a>
+<button class="w-full mt-4 bg-primary text-on-primary py-2 font-bold uppercase text-[10px] tracking-widest rounded hover:opacity-80 transition-opacity">
+                Support
+            </button>
+</div>
+</nav>
+<!-- Main Content Stage -->
+<main class="ml-64 mt-16 h-[calc(100vh-64px)] grid grid-cols-12 gap-0 overflow-hidden bg-background">
+<!-- Left Analysis Controls -->
+<aside class="col-span-3 border-r border-surface-variant bg-surface-container-low flex flex-col overflow-y-auto">
+<div class="p-4 border-b border-surface-variant">
+<h2 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4">Segmentation Controls</h2>
+<!-- Classification Bars -->
+<div class="space-y-4 mb-8">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1.5 uppercase">
+<span>Trees</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 82%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1.5 uppercase">
+<span>Roads</span>
+<span class="text-on-surface-variant">5%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline" style="width: 5%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1.5 uppercase">
+<span>Unclassified</span>
+<span class="text-secondary">11%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 11%"></div>
+</div>
+</div>
+</div>
+<!-- PDAL Parameters -->
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-4 pt-4 border-t border-surface-variant/30">PDAL Parameters</h3>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-sm text-[10px] uppercase text-outline">Voxel Resolution (m)</label>
+<input class="w-full accent-primary h-1 bg-surface-container-highest appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between text-data-mono font-data-mono text-[10px]">
+<span>0.10</span>
+<span class="text-primary">0.45</span>
+<span>2.00</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-[10px] uppercase text-outline">Local Confidence</label>
+<div class="flex items-center gap-2">
+<div class="flex-grow h-8 bg-surface-container-lowest border border-outline-variant flex items-center px-3 text-data-mono font-data-mono text-sm">
+                                0.982
+                            </div>
+<button class="h-8 px-3 border border-outline-variant hover:bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mistral 7B Inference Log -->
+<div class="flex-grow flex flex-col min-h-0 bg-surface-container-lowest p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Mistral 7B Inference</h3>
+<span class="text-[10px] font-data-mono text-primary animate-pulse">LIVE</span>
+</div>
+<div class="flex-grow bg-background border border-outline-variant p-3 font-data-mono text-data-mono overflow-y-auto whitespace-pre-wrap leading-relaxed text-on-surface-variant selection:bg-primary selection:text-on-primary">
+<span class="text-primary">[SYSTEM]</span> Model: Mistral-7B-v0.1 loaded.
+<span class="text-primary">[QUERY]</span> Analyze voxel cluster #8821.
+<span class="text-outline-variant">--------------------------------</span>
+<span class="text-secondary">[ANALYSIS]</span> Detected anomalous point density 
+in sector 4G. Signature matches 
+'Quercus Robur' with 89.2% confidence.
+<span class="text-primary">[TASK]</span> Initiating tree height 
+extraction...
+<span class="text-primary">[TASK]</span> Segmentation complete. 
+<span class="text-secondary">[WARN]</span> Manual review recommended 
+for occlusion at (45.21, -122.67).
+<span class="text-outline-variant">--------------------------------</span>
+<span class="text-primary">[SYSTEM]</span> Ready for next batch...
+_</div>
+</div>
+</aside>
+<!-- Center 3D Viewport -->
+<section class="col-span-6 relative bg-[#060e20] flex items-center justify-center overflow-hidden">
+<!-- Viewport Background (Point Cloud Placeholder) -->
+<div class="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none" style="background-image: radial-gradient(#14b8a6 1px, transparent 1px); background-size: 20px 20px;">
+</div>
+<img alt="Aether Viewport" class="w-full h-full object-cover opacity-60 grayscale" data-alt="A detailed 3D LiDAR point cloud visualization of a dense forest canopy at dusk. Thousands of tiny glowing teal and amber dots represent tree structures, terrain, and structures in a wireframe-like perspective. The scene is viewed from a top-down isometric angle, showcasing complex spatial data and environmental depth in a high-tech, digital-command-center style. The lighting is low-key, emphasizing the bioluminescent quality of the data points against a deep navy background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp2O0wc2RkNtnqydisJeFjs9LY_FCuwCZYL2-DO0WIW47H-V_1RIrDtP9GRotsx8quVdIX_l8Hkdyj_ydKrZ8nZ5NEpIMJK9hTreyY3AbqE92cjmTDySTgnkuwamYKvzpgMi_5gxwtM3-8uqjjxjYbGTdA-z1cYtjv8sKNCMoV2k6Te8DJchASYz0IBuMbnQQgpZvWHQ8f0RENBeE0cLMe5yrXcMutzXvXkyjbbIUdnB5s2IXHDpA_FzCp-dWvKwYnIwguXdeOhUPA"/>
+<!-- HUD Overlays -->
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<div class="bg-background/80 backdrop-blur-md border border-outline-variant p-3">
+<div class="text-[10px] uppercase text-outline mb-1">Coordinates</div>
+<div class="text-data-mono font-data-mono text-xs">45.523062° N, 122.676482° W</div>
+</div>
+<div class="bg-background/80 backdrop-blur-md border border-outline-variant p-3">
+<div class="text-[10px] uppercase text-outline mb-1">AABB Dimensions</div>
+<div class="text-data-mono font-data-mono text-xs">X: 25.4m | Y: 18.2m | Z: 32.1m</div>
+</div>
+</div>
+<!-- Navigation Controls Overlay -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-background/90 border border-outline-variant p-1 rounded-lg">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="pan_tool">pan_tool</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-primary bg-primary/10">
+<span class="material-symbols-outlined" data-icon="3d_rotation">3d_rotation</span>
+</button>
+<div class="w-px h-6 bg-outline-variant mx-1"></div>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</button>
+</div>
+<!-- Active Selection Highlight (Box Overlay Effect) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-64 h-64 border-2 border-primary/50 bg-primary/5 relative">
+<div class="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-primary"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[8px] font-bold px-1 py-0.5 transform -translate-y-full">
+                        ENTITY: CANOPY_082
+                    </div>
+</div>
+</div>
+</section>
+<!-- Right Manual Decision Queue -->
+<aside class="col-span-3 bg-surface-container-low border-l border-surface-variant flex flex-col">
+<div class="p-4 bg-surface-container flex justify-between items-center border-b border-surface-variant">
+<h2 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">Decision Queue</h2>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 font-bold border border-secondary/20">3 PENDING</span>
+</div>
+<div class="flex-grow p-4 space-y-4 overflow-y-auto">
+<!-- Amber Alert Card -->
+<div class="bg-secondary-container/10 border border-secondary p-4 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="warning">warning</span>
+<span class="font-label-sm text-label-sm uppercase font-bold">Manual Decision Required</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        Inference engine cannot distinguish between <span class="text-secondary">utility line</span> and <span class="text-secondary">low-hanging branch</span> at Segment ID: 8821.
+                    </p>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<button class="bg-secondary text-on-secondary font-bold text-[10px] py-2 uppercase tracking-tight hover:opacity-90">Classify Utility</button>
+<button class="bg-surface-variant border border-outline text-on-surface font-bold text-[10px] py-2 uppercase tracking-tight hover:bg-surface-container-highest">Classify Vegetation</button>
+</div>
+</div>
+<!-- History Items -->
+<div class="space-y-3">
+<h3 class="text-[10px] uppercase text-outline font-bold tracking-widest">Recent Actions</h3>
+<div class="bg-surface-container border border-outline-variant p-3 flex gap-3 group">
+<div class="w-12 h-12 bg-background flex-shrink-0 border border-outline-variant overflow-hidden">
+<img alt="Segment Thumb" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A sharp, high-contrast close-up macro photograph of a dense pine forest canopy. The image emphasizes the complex interlocking pattern of dark green needles and brown branches against a moody, overcast sky. The visual style is technical and scientific, featuring a cold, clinical color palette that aligns with a high-integrity data analysis platform. The lighting is diffused, revealing every minute detail of the tree structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALBoZMjYGlqbVxPEPYd3urG7fZ7zCsh8-9gEQZlE276ugxj3EmBcaxg2nd51B5O33HHvCq7RQcrhprd2edfWaqbew-7jAgk4mni0Yc7Bsu95ygYzxU3pSpzNAgjnbU6vKX8S_Rdowq8j8FFxZ2ib-FIMzjAVahjH1bXDqInXfYst-858SVxfTyvHuQgLuR6Vm5zVKe71-vDTTdhvHzMUapC5kwXN1fLDvj4qnFv6CgKYemGBcIij7pgZtsdb0hD7uTK-qkq1lJUxJF"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="text-[10px] font-bold text-primary mb-0.5">AUTO-RESOLVED</div>
+<div class="text-xs font-bold text-on-surface truncate">Segment ID: 9002</div>
+<div class="text-[9px] text-outline mt-1 uppercase">Resolved as: ROAD_SURFACE</div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-3 flex gap-3 group">
+<div class="w-12 h-12 bg-background flex-shrink-0 border border-outline-variant overflow-hidden">
+<img alt="Segment Thumb" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="An aerial photograph focusing on a single, massive oak tree in an open meadow. The tree is isolated, showing its expansive canopy and thick, rugged trunk with intense clarity. The lighting is bright and crisp, casting a long, defined shadow across the grass. The overall aesthetic is clean and minimalist, highlighting the organic geometry of the tree as a target for spatial segmentation software." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkm2FWTXzmOa9wj6QGoXFgvQjjraLc_RIFQYCEuuJs-7Fbmh7eEwXXJVXiseK0mW70ArrTfbEELUgrLkEIenx9eLqWz3ko9dkuMmrY1v4cYKJAQYS9DwEb5JPkKqfyDaxXnrjfo8dsUG9tsWWVIDygPJmGMQfrwwH1u7NStsjCzSQ_v7PBTJGNHEAJq9KHczy-FME6FyW7i4L-ERh6SRGng39Bm2VnbSAtPAiK2hfZWasx-4Pd1kZbBDyT4LtyztfzctmtRsD3Hefn"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="text-[10px] font-bold text-primary mb-0.5">AUTO-RESOLVED</div>
+<div class="text-xs font-bold text-on-surface truncate">Segment ID: 9005</div>
+<div class="text-[9px] text-outline mt-1 uppercase">Resolved as: VEGETATION_L2</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Offline Status -->
+<div class="h-8 bg-surface-container-lowest border-t border-surface-variant flex items-center justify-between px-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[9px] font-label-sm uppercase tracking-widest text-primary">Status: Synced</span>
+</div>
+<div class="text-[9px] font-data-mono text-outline">LATENCY: 12ms</div>
+</div>
+</aside>
+</main>
+<!-- Floating Action Button -->
+<!-- FAB Suppressed on Details/Analysis screens as per protocol -->
+</body></html>
